@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Services\Spotify\Playlists;
+namespace App\Spotify\Playlists;
 
 class Classic implements IPlaylist
 {
   private int $minTemperature = 0;
   private int $maxTemperature = 9;
-  private string $playlistId  = '2QnXgeIf2hOmwqQmzdNZdC?si=2spX2nYQSS-88vN_WR24Mg';
+  private string $playlistId  = '7tvRjnyp29STnwNIkFmuD0?si=JYq4CqOsSb-Dl9UMdzkEIg';
 
   public function getMinTemperature(): int
   {
