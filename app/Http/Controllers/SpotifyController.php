@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Services\Spotify\Playlists\IPlaylist;
-use App\Services\Spotify\Spotify;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
