@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services\Spotify\Playlists;
+namespace App\Spotify\Playlists;
 
 interface IPlaylist
 {

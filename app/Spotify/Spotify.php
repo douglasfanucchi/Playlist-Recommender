@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Services\Spotify;
+namespace App\Spotify;
 
-use App\Services\Spotify\Playlists\IPlaylist;
+use App\Spotify\Playlists\IPlaylist;
 use Illuminate\Support\Facades\Http;
 
 class Spotify
