@@ -1,21 +1,22 @@
 <?php
 
-namespace App\Services\Spotify\Playlists;
+namespace App\Spotify\Playlists;
 
 class PlaylistFactory
 {
-  public static function getPlaylist(int $temperature): string
+  public static function getPlaylist(float $temperature): IPlaylist
   {
-    if ($temperature < 10)
-      return Classic::class;
+    if ($temperature < 10) {
+      return new Classic;
+    }
 
     if ($temperature >= 10 && $temperature <= 14)
-      return Rock::class;
+      return new Rock;
 
     if ($temperature >= 15 && $temperature <= 30)
-      return Pop::class;
+      return new Pop;
 
     if ($temperature > 30)
-      return Party::class;
+      return new Party;
   }
 }
