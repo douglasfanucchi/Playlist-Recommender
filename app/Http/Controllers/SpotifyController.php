@@ -9,8 +9,8 @@ use Illuminate\Http\Request;
 
 class SpotifyController extends Controller
 {
-  public function index(Spotify $spotify, IPlaylist $playlist)
+  public function index(Request $request)
   {
-    return new JsonResponse($spotify->getPlaylist($playlist));
+    return new JsonResponse(new \stdClass);
   }
 }
