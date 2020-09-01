@@ -13,11 +13,7 @@
 |
 */
 
-$router->get('/', function () use ($router) {
-    return $router->app->version();
-});
-
-$router->get('{locationInfo}', [
+$router->get('/{locationInfo}', [
     'middleware' => ['decodeParametersValue'],
     'uses' => 'SpotifyController@index'
 ]);
