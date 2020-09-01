@@ -19,8 +19,8 @@ class Spotify
     $respose = $request->get($url);
 
     $json = $respose->body();
-
-    return json_decode($json);
+    $body = json_decode($json);
+    return $this->hydrateBody($body);
   }
 
   public function setToken(): void
@@ -40,5 +40,21 @@ class Spotify
     $body = json_decode($json);
 
     return $body->access_token;
+  }
+
+  private function hydrateBody(\stdClass $body): array
+  {
+    $playlist = array_map(function ($item) {
+      $track = $item->track;
+
+      return [
+        "name" => $track->name,
+        "duration" => $track->duration_ms,
+        "url" => $track->external_urls->spotify,
+        "uri" => $track->uri,
+      ];
+    }, $body->tracks->items);
+
+    return ["name" => $body->name, "tracks" => $playlist];
   }
 }
