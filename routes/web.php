@@ -17,9 +17,7 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
-$router->group(['prefix' => 'spotify'], function () use ($router) {
-    $router->get('{locationInfo}', [
-        'middleware' => ['decodeParametersValue'],
-        'uses' => 'SpotifyController@index'
-    ]);
-});
+$router->get('{locationInfo}', [
+    'middleware' => ['decodeParametersValue'],
+    'uses' => 'SpotifyController@index'
+]);
