@@ -10,10 +10,10 @@ class PlaylistFactory
       return new Classic;
     }
 
-    if ($temperature >= 10 && $temperature <= 14)
+    if ($temperature > 9 && $temperature < 15)
       return new Rock;
 
-    if ($temperature >= 15 && $temperature <= 30)
+    if ($temperature > 14 && $temperature < 31)
       return new Pop;
 
     if ($temperature > 30)
